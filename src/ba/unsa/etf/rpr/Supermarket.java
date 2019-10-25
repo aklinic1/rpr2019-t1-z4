@@ -6,9 +6,13 @@ public class Supermarket {
 
 
 
-    public  void dodajArtikl(String ime, double cijena, int kod){
+    public  void dodajArtikl(String ime, double cijena, String kod){
         Artikl novi =  new Artikl(ime, cijena, kod);
         artikli[broj_artikala]=novi;
+        broj_artikala++;
+    }
+    public void dodajArtikl(Artikl artikl) {
+        artikli[broj_artikala]=artikl;
         broj_artikala++;
     }
 
@@ -22,4 +26,22 @@ public class Supermarket {
             System.out.println(temp.getNaziv() + " " + temp.getCijena() + " " +temp.getKod() + "\n");
         }
     }
+
+    public Artikl izbaciArtiklSaKodom(String kod) {
+        int i,j=0;
+        Artikl a = null;
+        Artikl temp[] = new Artikl[50];
+        for(i=0;i<broj_artikala;i++){
+            if(!artikli[i].getKod().equals(kod)) {
+                temp[j] = artikli[i];
+                j++;
+            }
+            else a = artikli[i];
+        }
+
+        artikli=temp;
+        broj_artikala=j;
+        return a;
+    }
 }
+

@@ -90,11 +90,11 @@ public class Main {
                 }
             }
             else if(opcija == 3){
-                int cijena = korpa.dajUkupnuCijenuArtikala(), iznos;
+                double cijena = korpa.dajUkupnuCijenuArtikala(), iznos;
                 System.out.println("Ukupna cijena je " + korpa.dajUkupnuCijenuArtikala() + " KM.");
                 do{
-                    System.out.print("Unesite ispravan iznos: ");
-                    iznos = scanner.nextInt();
+                    System.out.println("Unesite ispravan iznos: ");
+                    iznos = scanner.nextDouble();
                 }while(iznos < cijena);
                 if(iznos > cijena) System.out.println("Povratni iznos: " + (iznos - cijena));
                 System.out.println("Placeno, kupovina finalizirana.");
