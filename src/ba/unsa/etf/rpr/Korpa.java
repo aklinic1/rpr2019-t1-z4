@@ -50,6 +50,10 @@ public class Korpa {
         return suma;
     }
 
+    public int getBroj_artikala() {
+        return broj_artikala;
+    }
+
     public Artikl[] getArtikli() {
         return artikli;
     }
